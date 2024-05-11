@@ -1,9 +1,15 @@
+/*
+Remove the comment and run it on Leetcode in the function itself. Main function not needed
+
+
+#include <bits/stdc++.h>
+#include <string>
 class Solution {
 public:
     int myAtoi(string s) {
         int ans=0,i=0, sn=1;
-        int max=INT_MAX;
-        int min=INT_MIN;
+           // int max=INT_MAX;
+        int min , max;    // int min=INT_MIN; // Before running it remove the int min, max line and uncomment the max and min function
         if(s.length()==0)
         return 0;
 
@@ -28,3 +34,4 @@ public:
         return ans*sn;
     }
 };
+*/
