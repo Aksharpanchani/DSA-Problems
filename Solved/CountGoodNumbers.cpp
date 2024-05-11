@@ -15,6 +15,7 @@ long long myPow(long long x, long long n) {
     }
     return ans;
 }
+
     int countGoodNumbers(long long n) {
         long long count4 = n/2;
         long long count5 = n - count4;
