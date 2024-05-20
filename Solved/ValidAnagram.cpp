@@ -52,7 +52,7 @@
 
 class Solution {
 public:
-    bool isAnagram(string s, string t) {
+    bool isAnagram(string str1, string str2) {
         if (str1.length() != str2.length())
     return false;
  
