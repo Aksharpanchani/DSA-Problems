@@ -1,45 +1,41 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-
-int main() {
-  int tests;
-  cin >> tests;
-  while(tests--) 
-  {
-    int nos_, mx;
-
-    cin >> nos_ >> mx;
-    if(nos_ == 0) 
+#define ll long long
+#define umap unordered_map<ll, ll>
+const ll mod = 1e9 + 7;
+//-------Akshar---------
+signed main() {
+    ll tests;
+    cin >> tests;
+/// Wrong at 2 testcases
+    while (tests--) 
     {
-      if(mx == 0)
-       {
-        cout << 0 << endl;
-        continue;
-      }
-      int bit = 1;
-      while(mx>>bit)
-      bit++;
+        ll nos, mx;
+        cin >> nos >> mx;
+        if (nos == 0) 
+        {
+            cout << (1LL << mx) - 1 << endl; 
+        } else 
+        {
+            ll e = 0;
+            ll add = 1; 
+            for (ll i = 0; i <= 32; i++) {
+                if (((1LL << i) & nos) == 0)
+                {
+                    if (add + i <= mx)
+                     {
+                        add += i;
+                        e += (1LL << i);
+                    } else {
 
-      cout << (1<<bit)-1 << endl;
-      continue;
+                        break;
+                    }
+                }
+            }
+            nos += e;
+            cout << nos << endl;
+        }
     }
-    int resu = 0;
-    for(int i = 0; i < 32; i++) {
-      
-      if((nos_>>i)&1) 
-      resu += (1<<i);
-
-      else {
-        int place = (nos_-((nos_>>i)<<i));
-        
-        if(mx >= (place+1))
-         resu += (1<<i);
-
-        else if(mx >= (1<<i)-place)
-         resu += (1<<i);
-      }
-    }
-    cout << resu << endl;
-  }
+    return 0;
 }
