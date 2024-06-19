@@ -17,23 +17,16 @@ struct Node {
 
 class Solution {
 public:
-    // Function to check if two
-    // binary trees are identical
+   
     bool isIdentical(Node* node1, Node* node2){
-        // If both nodes are NULL,
-        // they are identical
+       
         if(node1 == NULL && node2 == NULL){
             return true;
         }
-        // If only one of the nodes is
-        // NULL, they are not identical
         if( node1== NULL || node2==NULL){
             return false;
         }
-        // Check if the current nodes
-        // have the same data value
-        // and recursively check their
-        // left and right subtrees
+
         return ((node1->data == node2->data)
             && isIdentical(node1->left, node2->left)
                 && isIdentical(node1->right, node2->right));
