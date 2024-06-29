@@ -26,3 +26,41 @@ public:
         return ksmall;
     }
 };
+
+
+//Kth Largest-------------------------------------------------
+/*The Node structure is defined as
+struct Node {
+    int data;
+    Node *left;
+    Node *right;
+
+    Node(int val) {
+        data = val;
+        left = right = NULL;
+    }
+};
+*/
+
+// return the Kth largest element in the given BST rooted at 'root'
+class Solution
+{   
+    void inorder(Node* root, vector<int> &v){
+        if(!root) return;
+
+        inorder(root->left,v);
+        v.push_back(root->data);
+        inorder(root->right,v);
+        return;
+    }
+    public:
+    int kthLargest(Node *root, int K)
+    {
+
+        vector<int> v;
+        inorder(root,v);
+        int klarge=v[v.size()-K];
+        return klarge;
+ 
+    }
+};
