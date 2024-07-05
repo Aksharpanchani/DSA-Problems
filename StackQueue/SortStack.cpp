@@ -12,5 +12,22 @@ void sortStack(stack<int> &stack)
     {
         stack.push(v[i]);
     }
-    
+
+}
+int main()
+{
+    stack<int> stack;
+    stack.push(34);
+    stack.push(3);
+    stack.push(31);
+    stack.push(98);
+    stack.push(92);
+    stack.push(23);
+    sortStack(stack);
+    while (!stack.empty())
+    {
+        cout << stack.top() << " ";
+        stack.pop();
+    }
+    return 0;
 }
