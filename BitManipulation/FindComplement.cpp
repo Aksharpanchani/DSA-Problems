@@ -1,0 +1,29 @@
+class Solution {
+public:
+    int findComplement(int num) {
+        if (num == 0) return 1;
+        
+        unsigned int mask = ~0;
+        
+        while (num & mask) {
+            mask <<= 1;
+        }
+        
+        return ~mask & ~num;
+    }
+};
+
+class Solution {
+public:
+    int findComplement(int num) {
+        int i = 0, ans = 0;
+        while (num) {
+            int temp = num & 1;
+            if (!temp)
+                ans += pow(2, i);
+            num = num >> 1;
+            i++;
+        }
+        return ans;
+    }
+};
