@@ -22,8 +22,6 @@ public:
         for (auto &event : events) {
             // get all the sum
             activeBookings += event.second;
-            
-            // If we have 3 or more overlapping bookings, it's a triple booking
             if (activeBookings >= 3) {
                 // Revert the changes, as the booking is not valid
                 events[start]--;
